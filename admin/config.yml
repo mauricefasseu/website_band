@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "band"
+    label: "Bandmitglieder"
+    folder: "content/band"
+    create: false
+    slug: "bandmitglieder"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Text", name: "body", widget: "markdown" }

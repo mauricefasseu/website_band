@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Interceptor - Über uns</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Interceptor</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="band.html">Band</a></li>
+            <li><a href="media.html">Bilder/Videos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div id="band-content">
+        <h2 id="band-title"></h2>
+        <div id="band-text"></div>
+      </div>
+
+      <script>
+        fetch("/content/band/bandmitglieder.md")
+          .then((res) => res.text())
+          .then((data) => {
+            const title = data.match(/^title:\s*(.+)$/m)?.[1] || "";
+            const body = data.split("---")[2]?.trim() || "";
+            document.getElementById("band-title").textContent = title;
+            document.getElementById("band-text").innerHTML = marked.parse(body);
+          });
+      </script>
+      <!-- marked.js laden -->
+      <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Bandname | <a href="impressum.html">Impressum</a></p>
+    </footer>
+  </body>
+</html>
