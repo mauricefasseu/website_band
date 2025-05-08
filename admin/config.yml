@@ -9,8 +9,8 @@ collections:
   - name: "band"
     label: "Bandmitglieder"
     folder: "content/band"
-    create: false
-    slug: "bandmitglieder"
+    create: true
+    slug: "{{slug}}"
     fields:
       - { label: "Titel", name: "title", widget: "string" }
       - { label: "Text", name: "body", widget: "markdown" }
