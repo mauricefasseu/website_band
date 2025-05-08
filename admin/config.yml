@@ -1,6 +1,8 @@
 backend:
   name: git-gateway
   branch: main
+  identity_url: https://app.netlify.com/sites/frabjous-rugelach-678c8b/identity
+  gateway_url: https://app.netlify.com/sites/frabjous-rugelach-678c8b/git
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
