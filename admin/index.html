@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <title>Admin</title>
+    <title>Admin - Website</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/@decapcms/core@2.0.0/dist/decap.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <div id="decap-cms"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@decapcms/core@2.0.0/dist/decap.min.js"></script>
+    <script>
+      CMS.init();
+    </script>
   </body>
 </html>

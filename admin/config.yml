@@ -1,8 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: mauricefasseu/website_band
   branch: main
 
-media_folder: "images/uploads"
+media_folder: "images/uploads" # Speicherort für Medien
 public_folder: "/images/uploads"
 
 collections:
@@ -12,5 +13,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Titel", name: "title", widget: "string" }
-      - { label: "Text", name: "body", widget: "markdown" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Rolle", name: "role", widget: "string" }
+      - { label: "Bild", name: "image", widget: "image" }
+      - { label: "Biografie", name: "bio", widget: "markdown" }
