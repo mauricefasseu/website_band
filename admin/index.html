@@ -4,15 +4,39 @@
     <meta charset="UTF-8" />
     <title>Admin - Website</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/@decapcms/core@2.0.0/dist/decap.min.css"
+      href="https://cdn.jsdelivr.net/npm/netlify-cms@2.15.0/dist/netlify-cms.min.css"
       rel="stylesheet"
     />
   </head>
   <body>
-    <div id="decap-cms"></div>
-    <script src="https://cdn.jsdelivr.net/npm/@decapcms/core@2.0.0/dist/decap.min.js"></script>
+    <div id="ncms"></div>
+    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.15.0/dist/netlify-cms.min.js"></script>
     <script>
-      CMS.init();
+      CMS.init({
+        config: {
+          backend: {
+            name: "git-gateway",
+            branch: "main", // Der Branch, den du verwenden möchtest
+          },
+          media_folder: "images/uploads",
+          public_folder: "/images/uploads",
+          collections: [
+            {
+              name: "band",
+              label: "Bandmitglieder",
+              folder: "content/band",
+              create: true,
+              slug: "{{slug}}",
+              fields: [
+                { label: "Name", name: "name", widget: "string" },
+                { label: "Rolle", name: "role", widget: "string" },
+                { label: "Bild", name: "image", widget: "image" },
+                { label: "Biografie", name: "bio", widget: "markdown" },
+              ],
+            },
+          ],
+        },
+      });
     </script>
   </body>
 </html>

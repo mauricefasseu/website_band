@@ -1,7 +1,6 @@
 backend:
-  name: github
-  repo: mauricefasseu/website_band
-  branch: main
+  name: git-gateway
+  branch: main # Der Branch, den du verwenden möchtest
 
 media_folder: "images/uploads" # Speicherort für Medien
 public_folder: "/images/uploads"
